@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+             version="3.0">
+  <persistence-unit name="MyExample">
+
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+<!--    Сканирование пакетов-->
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+
+<!--    Добавление классов вручную-->
+<!--    <class>com.example.database.P20_OneToOne.C2_BiDirectionalConnection.Address</class>-->
+<!--    <class>com.example.database.P20_OneToOne.C2_BiDirectionalConnection.Student</class>-->
+
+    <properties>
+
+<!--      Удаление и создание таблиц в базе данных каждый раз заново-->
+<!--      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>-->
+
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/my_db"/>
+      <property name="javax.persistence.jdbc.user" value="bestuser"/>
+      <property name="javax.persistence.jdbc.password" value="bestuser"/>
+
+    </properties>
+
+  </persistence-unit>
+</persistence>
